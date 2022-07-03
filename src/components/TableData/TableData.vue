@@ -87,7 +87,7 @@ export default {
                 item.status === "processing"
                   ? "Processando"
                   : item.status === "created"
-                  ? "Criado"
+                  ? "Solicitada"
                   : "Pago"
               }}
             </div>

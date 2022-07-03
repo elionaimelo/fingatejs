@@ -70,24 +70,22 @@ export default {
             </div>
           </div>
 
-          <div class="flex justify-center">
+          <div class="w-full h-4 mt-10 bg-gray-200 rounded-full">
             <div
-              :class="`mt-5 status px-3 py-3 text-sm leading-none text-center ${
-                item.status === 'processing'
-                  ? 'text-red-700 bg-red-100'
-                  : item.status === 'created'
-                  ? 'text-green-700 bg-green-100'
-                  : 'text-blue-700 bg-blue-100'
-              }  rounded focus:outline-none`"
-            >
-              {{
-                item.status === "processing"
-                  ? "Processando"
-                  : item.status === "created"
-                  ? "Criado"
-                  : "Pago"
-              }}
-            </div>
+              class="h-4 bg-indigo-700 rounded-full"
+              :style="`width: ${
+                item.status === 'created'
+                  ? '1%'
+                  : item.status === 'processing'
+                  ? '50%'
+                  : '100%'
+              }`"
+            ></div>
+          </div>
+          <div class="flex justify-between">
+            <div class="mb-1 text-sm">Solicitada</div>
+            <div class="mb-1 text-sm">Processada</div>
+            <div class="mb-1 text-sm">Concluída</div>
           </div>
         </div>
       </div>
