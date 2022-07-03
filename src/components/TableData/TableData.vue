@@ -104,7 +104,7 @@ export default {
           </td>
           <td class="pl-4">
             <button
-              class="px-5 py-3 text-sm leading-none text-gray-600 bg-gray-100 rounded focus:ring-2 focus:ring-offset-2 focus:ring-red-300 hover:bg-gray-200 focus:outline-none"
+              class="px-5 py-3 text-sm leading-none text-gray-600 bg-gray-100 rounded focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 hover:bg-gray-200 focus:outline-none"
               @click="viewItem(item)"
             >
               Ver
@@ -124,7 +124,7 @@ export default {
       <button
         class="w-full px-4 py-2 mb-4 mr-3 text-sm leading-none text-gray-700 border border-gray-200 rounded-lg md:w-auto hover:bg-gray-200 focus:outline-none"
         @click="changePage(currentPage + 1)"
-        :disabled="currentPage === totalPages"
+        :disabled="currentPage === totalPages || data.length < pageSize"
       >
         Próximo
       </button>

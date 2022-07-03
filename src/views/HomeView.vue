@@ -111,7 +111,11 @@ export default {
       await transactions
         .getTransactions()
         .then((res) => {
-          this.data = res;
+          this.data = res
+            .sort((a, b) => {
+              return new Date(a.date) - new Date(b.date);
+            })
+            .reverse();
           this.dates = this.dates.concat(
             [...new Set(res.map((item) => item.date))].map((date) => {
               return {
@@ -127,21 +131,19 @@ export default {
           this.isLoading = false;
         });
     },
-    onSearch(val) {
+    handleValue(item) {
       this.isLoading = true;
-      this.search = val;
+      this.currentPage = 1;
+      if (item.type === "search") {
+        this.search = item.value;
+      } else if (item.type === "sort") {
+        this.sortBy = item.value;
+      } else if (item.type === "date") {
+        this.sortDate = item.value;
+      }
       this.isLoading = false;
     },
-    onDate(val) {
-      this.isLoading = true;
-      this.sortDate = val;
-      this.isLoading = false;
-    },
-    onSort(val) {
-      this.isLoading = true;
-      this.sortBy = val;
-      this.isLoading = false;
-    },
+
     changePage(val) {
       let size = Math.ceil(this.data.length / this.pageSize);
 
@@ -163,11 +165,11 @@ export default {
   <ModalContent ref="modal" />
 
   <div
-    class="max-w-screen-xl p-8 mx-auto bg-white md:mb-24 mb-11 md:-mt-48 drop-shadow-lg rounded-t-3xl"
+    class="max-w-screen-xl p-8 mx-auto bg-white border border-gray-200 shadow-inner shadow-gray-300 md:mb-24 mb-11 md:-mt-48 rounded-3xl"
   >
     <div class="w-full">
       <div class="px-4 py-4 md:px-10 md:py-7">
-        <SearchField @search="onSearch" />
+        <SearchField @search="handleValue" />
         <div class="items-center justify-between md:flex">
           <h2
             tabindex="0"
@@ -180,10 +182,10 @@ export default {
       <div class="px-2 py-4 bg-white md:pb-7 md:pt-3 md:px-8">
         <div class="md:max-w-xl md:flex">
           <p class="flex items-center justify-center mr-3 md:justify-start">
-            filtros:
+            Filtros:
           </p>
-          <SortBy @sort="onDate" :options="dates" class="mr-2" />
-          <SortBy @sort="onSort" :options="options" />
+          <SortBy @sort="handleValue" :options="dates" class="mr-2" />
+          <SortBy @sort="handleValue" :options="options" />
         </div>
         <div class="overflow-x-auto mt-7">
           <SpinerLoading v-if="isLoading" />

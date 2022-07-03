@@ -11,7 +11,10 @@ export default {
   },
   methods: {
     onSearch() {
-      this.$emit("search", this.searchTerm);
+      this.$emit("search", {
+        type: "search",
+        value: this.searchTerm,
+      });
     },
     onClear() {
       this.searchTerm = "";
