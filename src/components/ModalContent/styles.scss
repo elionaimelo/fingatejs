@@ -1,0 +1,23 @@
+@import "@/assets/styles/variables.scss";
+
+.bg-backdrop {
+  background: $bg-backdrop;
+  transition: ease-in-out 0.3s;
+}
+
+.md-lg {
+  width: 95%;
+
+  @include breakpoint(md) {
+    width: 40%;
+  }
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.status {
+  min-width: 300px;
+  max-width: 50%;
+}

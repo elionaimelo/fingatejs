@@ -5,6 +5,7 @@ import TableData from "../components/TableData/TableData.vue";
 import SortBy from "../components/SortyBy/SortBy.vue";
 import transactions from "../services/transactions";
 import SpinerLoading from "../components/SpinerLoading/SpinerLoading.vue";
+import ModalContent from "../components/ModalContent/ModalContent.vue";
 
 export default {
   components: {
@@ -13,6 +14,7 @@ export default {
     TableData,
     SortBy,
     SpinerLoading,
+    ModalContent,
   },
   data() {
     return {
@@ -148,12 +150,17 @@ export default {
       this.currentPage = val;
       this.isLoading = false;
     },
+    showModal(item) {
+      this.$refs.modal.showModal(item);
+    },
   },
 };
 </script>
 
 <template>
   <HeaderGlobal />
+
+  <ModalContent ref="modal" />
 
   <div
     class="max-w-screen-xl p-8 mx-auto bg-white md:mb-24 mb-11 md:-mt-48 drop-shadow-lg rounded-t-3xl"
@@ -187,6 +194,7 @@ export default {
             :pageSize="pageSize"
             :totalPages="totalPages"
             @change-page="changePage"
+            @view-item="showModal"
             v-else
           />
         </div>
