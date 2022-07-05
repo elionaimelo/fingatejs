@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=500px src="https://github.com/elionaimelo/fingatejs/raw/master/src/assets/images/Fingate.png" alt="FingateJS"></a>
+ <img width=700px src="https://github.com/elionaimelo/fingatejs/raw/master/src/assets/images/Fingate.png" alt="FingateJS"></a>
 </p>
 
 <h3 align="center">fingatejs</h3>
