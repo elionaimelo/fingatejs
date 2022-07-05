@@ -1,48 +1,39 @@
-# fingatejs
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
+</p>
 
-This template should help get you started developing with Vue 3 in Vite.
+<h3 align="center">fingatejs</h3>
 
-## Recommended IDE Setup
+<div align="center">
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-## Customize configuration
+</div>
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+---
 
-## Project Setup
+## 📝 Table of Contents
 
-```sh
-npm install
-```
+- [Sobre](#about)
+- [Construído com](#built_using)
 
-### Compile and Hot-Reload for Development
+## 🧐 Sobre <a name = "about"></a>
 
-```sh
-npm run dev
-```
+Projeto desenvolvido para o teste na warren.
 
-### Compile and Minify for Production
+Neste projeto foram utilizados conceitos de:
 
-```sh
-npm run build
-```
+  - SOLID
+  - Classes atômicas
 
-### Run Headed Component Tests with [Cypress Component Testing](https://on.cypress.io/component)
 
-```sh
-npm run test:unit # or `npm run test:unit:ci` for headless testing
-```
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+## ⛏️ Construído com <a name = "built_using"></a>
 
-```sh
-npm run build
-npm run test:e2e # or `npm run test:e2e:ci` for headless testing
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- [VueJs](https://vuejs.org/) - Web Framework
+- [Tailwind](https://tailwindcss.com/) - Estilização
+- [Axios](https://axios-http.com/) - HTTP Client

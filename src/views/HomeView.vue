@@ -143,7 +143,6 @@ export default {
       }
       this.isLoading = false;
     },
-
     changePage(val) {
       let size = Math.ceil(this.data.length / this.pageSize);
 
